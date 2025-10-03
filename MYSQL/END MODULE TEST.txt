@@ -1,0 +1,80 @@
+FRN NO:11PO625/040
+NAME: Sanjana Rajendra Ganvir
+SET A
+
+
+QUE1.
+select name, salary from employees
+order by salary desc;
+
+QUE2.
+select name ,salary from employees 
+order by salary desc limit 5;
+
+QUE3.
+select * from employees
+where employee_id not in 
+(select employee_id from employees 
+order by employees_id
+limit 3)
+limit 5;
+
+QUE4.
+select department, count(*) as total_employees from employees
+group by department;
+
+QUE5.
+select department, avg(salary) as avg salary from employees
+group by department
+having avg(salary)>50000;
+
+QUE6.
+select * from product
+where product name like "%Laptop%;
+
+QUE7.
+select substring (student_name,1,3)
+from students;
+
+QUE8.
+select * from students 
+where student_name like 'A%';
+
+QUE9.
+select month(order_date) as month,count(*) as total_orders from orders
+group by month(order_date)
+having count(*)>100;
+
+QUE10.
+select category,sum(amount) as total_sales, avg(amount) as avg_sales from sales 
+group by category
+having sum(amount)>100000;
+
+QUE11.
+a. The total number of employees
+
+QUE12.
+b.8
+ 
+QUE13.
+c. having
+
+QUE14.
+b. returns all rows from the left table and matching rows from the right table 
+
+QUE15.
+b. HELLO WORLD 
+
+QUE16.
+select c.region, sum (o. total_amount) from orders o 
+join customers c on o.customer_id=c.customer_id
+group by c.region 
+having sum(o.total_amount)>10000;
+
+QUE17.
+select b.author_id,sum(s.quantity) as total_books_sold from books b
+join sales s on b.book_id=s.book_id
+group by b.author_id
+having sum(s.quantity)>100;
+
+
